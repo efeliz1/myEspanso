@@ -1,0 +1,51 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"
+
+  # Follow up message
+  - trigger: ":msg01"
+    replace: "Hello, I am following up with a ticket issue number"
+  
+  # Follow up message2
+  - trigger: ":msg02"
+    replace: "Hello Matthew, I have user traveling outside the states"
+  # Follow up message3
+  - trigger: ":msg03"
+    replace: "Do you still need any assistance with this issue?"
+
+  # work phone number
+  - trigger: ":pn"
+    replace: "617-528-8164"
+
+  #Work - Active Directory shortcut
+  - trigger: ":user-ad-group"
+    replace: "Get-ADPrincipalGroupMembership"
+
+  
